@@ -1,24 +1,23 @@
 document.getElementById('change_button').addEventListener('click', function () {
-  // Reset all grid items' background to transparent
-  let gridItems = document.getElementsByClassName('grid-item');
-  for (let item of gridItems) {
-    item.style.backgroundColor = 'transparent';
-  }
-
-  // Get block ID and color
   let blockId = document.getElementById('block_id').value;
   let color = document.getElementById('colour_id').value;
 
-  // Change color of the selected block
-  let block = document.getElementById(blockId);
+  // Reset all block colors
+  const allBlocks = document.querySelectorAll('.grid-item');
+  allBlocks.forEach(block => {
+    block.style.backgroundColor = 'transparent';
+  });
+
+  // Change the selected block's background
+  const block = document.getElementById(blockId);
   if (block) {
     block.style.backgroundColor = color;
   }
 });
 
-document.getElementById('Reset').addEventListener('click', function () {
-  let gridItems = document.getElementsByClassName('grid-item');
-  for (let item of gridItems) {
-    item.style.backgroundColor = 'transparent';
-  }
+document.getElementById('reset_button').addEventListener('click', function () {
+  const allBlocks = document.querySelectorAll('.grid-item');
+  allBlocks.forEach(block => {
+    block.style.backgroundColor = 'transparent';
+  });
 });
